@@ -1,5 +1,5 @@
 ## Overview:
-  podcastd is a simple podcast downloader written in python.  
+  podcastd is a simple podcast downloader written in python. I needed something to run on a pi-zero plugged into the USB port of my i3.
 
 ## Features
 
@@ -39,7 +39,7 @@ export ENV=dev
 ```
 python app.py
 ```
-3) Add some subscriptions, some helper scripts to convert OMPL files to yaml can be found in the `init` directory.
+3) Add some subscriptions, some helper scripts to convert OMPL files to yaml can be found in the `init` directory. Update the `podcasts.yml` to suit your tastes.
 
 ```
 pip install pyyaml
@@ -86,9 +86,16 @@ curl -X PUT localhost:5000/podcast/1 -H "Content-Type: application/json" -d '{
 }'
 ```
 
-- POST `/update`: Trigger a update for subscriptions and removal of expired episodes.
+- POST `/update`: Trigger a update for subscriptions and removal of expired episodes. The update process will run in the background
 
 ```
 curl -X POST http://localhost:5000/update
 ```
-The update process will run in the background.
+
+## Scheduling
+
+Use cron to schedule hourly updates. Add the following to the crontab.
+
+```
+10 * * * * curl -X POST localhost:5000/update
+```
