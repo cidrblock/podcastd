@@ -1,0 +1,8 @@
+venv
+podcasts
+ansible
+*.db
+*.pyc
+logs
+settings.py
+archive

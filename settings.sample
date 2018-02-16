@@ -1,0 +1,34 @@
+import os
+
+if 'ENV' in os.environ and os.environ['ENV'] == 'dev':
+    BASE_DIR = './Podcasts'
+    FLASK_DEBUG = False
+    LOGGING_LEVEL_CONSOLE = 'DEBUG'
+    LOGGING_LEVEL_FILE = 'DEBUG'
+    logging_levels = {}
+    logging_levels['asyncio'] = 'INFO'
+    logging_levels['app.logger'] = 'DEBUG'
+    logging_levels['eyed3'] = 'ERROR'
+    logging_levels['werkzeug'] = 'DEBUG'
+    logging_levels['peewee'] = 'INFO'
+    logging_levels['podcastd.podcast'] = 'DEBUG'
+    logging_levels['podcastd.episode'] = 'DEBUG'
+    logging_levels['default'] = 'DEBUG'
+else:
+    BASE_DIR = '/mnt/usb_share/Podcasts'
+    FLASK_DEBUG = False
+    LOGGING_LEVEL_CONSOLE = 'DEBUG'
+    LOGGING_LEVEL_FILE = 'DEBUG'
+    logging_levels = {}
+    logging_levels['werkzeug'] = 'ERROR'
+    logging_levels['eyed3'] = 'ERROR'
+    logging_levels['default'] = 'INFO'
+
+
+
+APP_NAME = 'podcastd'
+LOGGING_FILE_PATH = './logs/log.txt'
+LOGGING_ROTATE_WHEN = 'd'
+LOGGING_ROTATE_INTERVAL = 1
+LOGGING_ROTATE_BACKUP_COUNT = 5
+SLACK_URL = ""
