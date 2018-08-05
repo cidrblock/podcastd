@@ -15,7 +15,7 @@ if 'ENV' in os.environ and os.environ['ENV'] == 'dev':
     logging_levels['podcastd.episode'] = 'DEBUG'
     logging_levels['default'] = 'DEBUG'
 else:
-    BASE_DIR = '/mnt/usb_share/Podcasts'
+    BASE_DIR = '~/storage/external-1/Podcasts'
     FLASK_DEBUG = False
     LOGGING_LEVEL_CONSOLE = 'DEBUG'
     LOGGING_LEVEL_FILE = 'DEBUG'
