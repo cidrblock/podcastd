@@ -6,6 +6,7 @@ def load():
         podcasts = yaml.load(stream)
     for name, details in podcasts.items():
         details.update({"name": name})
+        print(name)
         response = requests.post("http://localhost:5000/podcast", json=details)
         print(response.text)
 

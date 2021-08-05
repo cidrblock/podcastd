@@ -13,6 +13,16 @@ All That Swing:
   max_age: 10000d
   max_episodes: 100
   url: https://allthatswing.wordpress.com/feed/
+BBC Coronavirus Global Update:
+  image: https://ichef.bbci.co.uk/images/ic/320x320/p085s4fy.jpg
+  max_age: 7d
+  max_episodes: 7
+  url: https://podcasts.files.bbci.co.uk/w13xtv39.rss
+BBC Global News Podcast:
+  image: https://ichef.bbci.co.uk/images/ic/320x320/p09kz0v5.jpg
+  max_age: 2d
+  max_episodes: 10
+  url: https://podcasts.files.bbci.co.uk/p02nq0gn.rss
 Big Band Bash:
   image: http://is5.mzstatic.com/image/thumb/Music/v4/96/eb/9a/96eb9a8d-b358-7038-bac5-7a0d7ea54c0e/source/170x170bb.jpg
   max_age: 10000d

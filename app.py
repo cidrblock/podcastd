@@ -100,7 +100,7 @@ def podcast_post():
         return json.dumps(response[0], cls=DateTimeEncoder)
     except peewee.IntegrityError as err:
         app.logger.debug(err)
-        return json.dumps({"error": "Duplicate"}), 400
+        return json.dumps({"error": str(err)}), 400
 
 @app.route('/podcasts', methods=['GET'])
 @log
