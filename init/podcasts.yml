@@ -1,8 +1,8 @@
-'A Prairie Home Companion: News from Lake Wobegon':
-  image: null
-  max_age: 7d
-  max_episodes: 3
-  url: https://feeds.publicradio.org/public_feeds/news-from-lake-wobegon/itunes/rss
+# 'A Prairie Home Companion: News from Lake Wobegon':
+#   image: null
+#   max_age: 7d
+#   max_episodes: 3
+#   url: https://feeds.publicradio.org/public_feeds/news-from-lake-wobegon/itunes/rss
 All About Android (MP3):
   image: null
   max_age: 7d
@@ -14,17 +14,17 @@ All That Swing:
   max_episodes: 100
   url: https://allthatswing.wordpress.com/feed/
 BBC Coronavirus Global Update:
-  image: https://ichef.bbci.co.uk/images/ic/320x320/p085s4fy.jpg
+  image: null
   max_age: 7d
   max_episodes: 7
   url: https://podcasts.files.bbci.co.uk/w13xtv39.rss
 BBC Global News Podcast:
-  image: https://ichef.bbci.co.uk/images/ic/320x320/p09kz0v5.jpg
+  image: null
   max_age: 2d
   max_episodes: 10
   url: https://podcasts.files.bbci.co.uk/p02nq0gn.rss
 Big Band Bash:
-  image: http://is5.mzstatic.com/image/thumb/Music/v4/96/eb/9a/96eb9a8d-b358-7038-bac5-7a0d7ea54c0e/source/170x170bb.jpg
+  image: null
   max_age: 10000d
   max_episodes: 5
   url: http://www.fgmiller.com/bbb/rss/bbb.xml
@@ -43,11 +43,31 @@ Hacked:
   max_age: 7d
   max_episodes: 3
   url: http://www.hackedpodcast.com/feed/podcast/
+NPR Ask Me Another:
+  image: null
+  max_age: 30d
+  max_episodes: 10
+  url: https://feeds.npr.org/510299/podcast.xml
+WVIK Charlie's Music Shop:
+  image: null
+  max_age: 10000d
+  max_episodes: 10000
+  url: https://wvik-rss.streamguys1.com/wvikfm/charlies-music-shop-itunes.xml
+NPR How I Built This with Guy Raz:
+  image: null
+  max_age: 30d
+  max_episodes: 10
+  url: https://feeds.npr.org/510313/podcast.xml
 NPR News Now:
-  image: https://media.npr.org/assets/img/2017/06/13/nprnewsnowtile_sq-6558ed29d47ed5bb8fb328a0259270aad8d161b2-s400-c85.png
+  image: null
   max_age: 1d
   max_episodes: 24
   url: https://www.npr.org/rss/podcast.php?id=500005
+NPR Wait Wait... Don't Tell Me!:
+  image: null
+  max_age: 30d
+  max_episodes: 10
+  url: https://feeds.npr.org/344098539/podcast.xml
 Packet Pushers - Full Feed:
   image: null
   max_age: 7d
@@ -108,13 +128,23 @@ This Week in Google (MP3):
   max_age: 7d
   max_episodes: 3
   url: http://leoville.tv/podcasts/twig.xml
-Wait Wait... Don't Tell Me!:
-  image: null
-  max_age: 7d
-  max_episodes: 3
-  url: https://www.npr.org/rss/podcast.php?id=344098539
 World Cafe Words and Music from WXPN:
   image: null
   max_age: 7d
   max_episodes: 3
   url: http://www.npr.org/rss/podcast.php?id=510008
+WVIK Jazz After Hours:
+  image: null
+  max_age: 10000d
+  max_episodes: 10000
+  url: https://wvik-rss.streamguys1.com/wvikfm/jazzafterhours.xml
+WVIK RME Radio Hour:
+  image: null
+  max_age: 10000d
+  max_episodes: 10000
+  url: https://wvik-rss.streamguys1.com/wvikfm/rmeradiohour.xml
+WVIK Swing Shift:
+  image: null
+  max_age: 10000d
+  max_episodes: 10000
+  url: https://wvik-rss.streamguys1.com/wvikfm/swingshift.xml

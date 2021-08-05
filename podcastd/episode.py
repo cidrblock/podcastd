@@ -47,7 +47,7 @@ class Episode(BaseModel):
 
         """
         podcast = get_valid_filename(self.podcast.name)
-        title = get_valid_filename(self.title).strip() + '.mp3'
+        title = f"{get_valid_filename(self.title).strip()} ({self.published}).mp3"
         fname = os.path.join(base_dir, podcast, title)
         self.logger.info("Downloading: %s" % fname)
         response = requests.get(self.link, stream=True)
@@ -108,7 +108,7 @@ class Episode(BaseModel):
                     break
         if not image:
             image = Image.open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'record.png'))
-            self.logger.info("Using default image: %s" % self.file_name)
+            self.logger.warning("Using default image: %s" % self.file_name)
 
         if image:
             size = 400, 400

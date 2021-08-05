@@ -46,8 +46,9 @@ class Podcast(BaseModel):
         from .episode import Episode
 
         added = 0
-        self.logger.info("Getting: %s" % self.name)
+        self.logger.info("%s: Retrieving" % self.name)
         feed = feedparser.parse(self.url)
+        feed_image = feed.feed.image.href
         for episode in feed['entries']:
             links = [x for x in episode['links'] if x['type'] == 'audio/mpeg']
             published = parser.parse(episode['published'])
@@ -58,7 +59,12 @@ class Podcast(BaseModel):
                 if not exists:
                     if 'image' in episode and 'href' in episode['image']['href']:
                         image = episode['image']['href']
+                        self.logger.debug("%s/%s: Using episode image" % (self.name, episode['id']))
+                    elif feed_image:
+                        image = feed_image
+                        self.logger.debug("%s/%s: Using feed image" % (self.name, episode['id']))
                     else:
+                        self.logger.warning("%s/%s: No feed or episode image" % (self.name, episode['id']))
                         image = None
                     entry = Episode(author=episode.get('author', self.name),
                                     episode_id=episode['id'],
