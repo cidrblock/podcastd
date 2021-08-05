@@ -46,9 +46,9 @@ class Episode(BaseModel):
                 base_dir: The base directory in which files should be placed
 
         """
-        fname = "%s/%s/%s" % (base_dir,
-                              get_valid_filename(self.podcast.name),
-                              get_valid_filename(self.title) + '.mp3')
+        podcast = get_valid_filename(self.podcast.name)
+        title = get_valid_filename(self.title).strip() + '.mp3'
+        fname = os.path.join(base_dir, podcast, title)
         self.logger.info("Downloading: %s" % fname)
         response = requests.get(self.link, stream=True)
         with open(fname, 'wb') as fileh:
@@ -106,6 +106,10 @@ class Episode(BaseModel):
                 if not image and current_tag.images:
                     image = Image.open(BytesIO(current_tag.images[0].image_data))
                     break
+        if not image:
+            image = Image.open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'record.png'))
+            self.logger.info("Using default image: %s" % self.file_name)
+
         if image:
             size = 400, 400
             image.thumbnail(size, Image.ANTIALIAS)
