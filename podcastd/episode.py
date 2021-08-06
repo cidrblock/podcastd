@@ -47,7 +47,8 @@ class Episode(BaseModel):
 
         """
         podcast = get_valid_filename(self.podcast.name)
-        title = f"{get_valid_filename(self.title).strip()} ({self.published}).mp3"
+        title = f"{self.title.strip()} {self.published}.mp3"
+        title = get_valid_filename(title)
         fname = os.path.join(base_dir, podcast, title)
         self.logger.info("Downloading: %s" % fname)
         response = requests.get(self.link, stream=True)

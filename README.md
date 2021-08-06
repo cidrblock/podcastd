@@ -99,3 +99,9 @@ Use cron to schedule hourly updates. Add the following to the crontab.
 ```
 10 * * * * curl -X POST localhost:5000/update
 ```
+
+## Sync to mp3 player
+
+```
+rsync -rvu --modify-window=1  "/home/bthornto/github/podcastd/Podcasts" "/run/media/bthornto/MIBAO-M200"
+```
